@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪💪</title>
+  </head>
+  <body>
+    <div id="main"><div id="sub1">
+      <p><em>Psst: have a look at the JS Console</em> 💁</p></div>
+      <div id="sub">
+        Press SHFT+CTRL+J to directly open console in Chrome and see my project
+      </div>
+    </div>
+
+
+<style>
+html,body{
+
+  background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2460.jpg?w=740&t=st=1664641618~exp=1664642218~hmac=04b7e0c35250f8b3b73c7ded8908948b09f5c5a5c6a7f7752a97b21ad9668178");
+background-size: cover;
+}
+
+
+
+#main{padding: 4rem;
+  margin: 1rem;
+text-align: center;
+text-transform: capitalize;
+background-image: linear-gradient(45.34deg,#bdc3c7  5.66%, #2c3e50 94.35%);
+border-radius: 10rem;
+box-shadow: #2c3e50 20rem;
+font-size: 150%;
+text-align: center;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+#sub{border-radius: 2rem;
+
+  background-image: linear-gradient(45.34deg,#7b4397   5.66%, #dc2430 94.35%);
+  
+  justify-content: space-between;
+  justify-self: center;
+  width: 100%;
+padding: 1rem;   
+position: relative;
+right:17px ;
+}
+#sub1{position: relative;
+right:17px ;
+  
+  padding: 1rem;
+  background-image: linear-gradient(45.34deg,#ed4264  5.66%, #ffedbc 94.35%);
+
+width: 100%;
+border-radius: 2rem;}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+    <script>
+      // ## Array Cardio Day 2
+
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Lux", year: 2015 },
+      ];
+
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
+
+      // Some and Every Checks
+      // Array.prototype.some() // is at least one person 19 or older?
+      const adult = people.some(
+        (people) => new Date().getFullYear() - people.year > 18
+      );
+      console.log({ adult });
+      // Array.prototype.every() // is everyone 19 or older?
+      const adult2 = people.every(
+        (people) => new Date().getFullYear() - people.year > 18
+      );
+      console.log({ adult2 });
+      // Array.prototype.find()
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+      const findID = comments.find((comment) => comment.id === 823423);
+      console.log(findID);
+
+      // Array.prototype.findIndex()
+      // Find the comment with this ID
+      const index = comments.findIndex((comments) => comments.id === 823423);
+      console.log(index);
+
+      // delete the comment with the ID of 823423
+      const comment1 = comments.slice(0, 1);
+      const comment2 = comments.slice(2);
+      const newComments = [...comment1, ...comment2];
+      console.table(newComments);
+      //display old comments
+      console.table(comments);
+    </script>
+  </body>
+</html>
